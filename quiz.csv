@@ -1,8 +1,7 @@
-question,optionA,optionB,optionC,optionD,correctAnswer
-question,optionA,optionB,optionC,optionD,correctAnswer
 question,optionA,optionB,optionC,optionD,optionE,correctAnswer
 "p5.js是什麼？","一個JavaScript函式庫","一種咖啡豆","一種汽車型號","一種程式語言","一種作業系統",A
 "在p5.js中，哪個函數只在程式開始時執行一次？","draw()","setup()","preload()","mousePressed()","keyTyped()",B
 "如何在p5.js中畫一個圓形？","circle(x, y, d)","rect(x, y, w, h)","line(x1, y1, x2, y2)","triangle(x1, y1, x2, y2, x3, y3)","point(x, y)",A
 "`background()` 函數的作用是什麼？","設定背景顏色","畫一個方塊","播放背景音樂","改變文字顏色","以上皆非",A
+
 "如何改變圖形的填滿顏色？","fill(r, g, b)","stroke(r, g, b)","color(r, g, b)","background(r, g, b)","noFill()",A
