@@ -235,6 +235,11 @@ function drawResultsScreen() {
 
 function selectRandomQuestions() {
   let rows = quizTable.getRows();
+  // 過濾掉標題行和空行
+  rows = rows.filter(row => {
+    let question = row.getString('question');
+    return question && question !== 'question' && question.trim() !== '';
+  });
   // 打亂題庫順序
   rows.sort(() => 0.5 - Math.random());
   // 選取前五題
@@ -309,14 +314,16 @@ function displayQuestion(index) {
 }
 
 function checkAnswer(selectedOption) {
-  let correctAnswer = questions[currentQuestionIndex].getString('correctAnswer');
+  let correctAnswer = questions[currentQuestionIndex].getString('correctAnswer').trim();
+  let question = questions[currentQuestionIndex];
+  let correctOptionText = question.getString('option' + correctAnswer);
   
   if (selectedOption === correctAnswer) {
     score++;
     feedback = '答對了！';
     feedbackColor = color(0, 150, 0);
   } else {
-    feedback = `答錯了，正確答案是 ${correctAnswer}`;
+    feedback = `答錯了，正確答案是 ${correctAnswer}: ${correctOptionText}`;
     feedbackColor = color(200, 0, 0);
   }
 
